@@ -31,13 +31,13 @@ preds  <- readRDS(paste0("data/", name,"_habitat_predictions.rds")) %>%
 # Use formula from 'top' model from FSSGam model selection
 # Total abundance
 m_totabund <- gam(maxn ~ s(mean.relief, k = 3, bs = "cr"), 
-               data = dat %>% dplyr::filter(scientific %in% "total.abundance",location%in%"NPZ6"), 
+               data = dat %>% dplyr::filter(scientific %in% "total.abundance"), 
                family = tw())
 summary(m_totabund)
 
 # Species richness
-m_richness <- gam(maxn ~ s(mean.relief, k = 3, bs = "cr") + s(tpi, k = 3, bs = "cr") + s(tpi, k = 3, bs = "cr"),  
-                     data = dat %>% dplyr::filter(scientific %in% "species.richness",location%in%"NPZ6"), 
+m_richness <- gam(maxn ~ s(mean.relief, k = 3, bs = "cr") + s(tpi, k = 3, bs = "cr"),  
+                     data = dat %>% dplyr::filter(scientific %in% "species.richness"), 
                      family = tw())
 summary(m_richness)
 
