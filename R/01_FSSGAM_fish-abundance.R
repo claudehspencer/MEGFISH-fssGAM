@@ -9,6 +9,7 @@
 rm(list=ls())
 
 # libraries----
+library(devtools)
 # devtools::install_github("beckyfisher/FSSgam_package") # Run once
 library(FSSgam)
 library(tidyverse)
@@ -17,7 +18,6 @@ library(MuMIn)
 library(car)
 library(doBy)
 library(doSNOW)
-library(devtools)
 # devtools::install_github("UWAMEGFisheries/GlobalArchive") # Run once
 library(GlobalArchive)
 library(ggplot2)
